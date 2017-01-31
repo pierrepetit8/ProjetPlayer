@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane prefHeight="424.0" prefWidth="622.0" style="-fx-background-color: #2c3e50;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <HBox alignment="BOTTOM_RIGHT" BorderPane.alignment="CENTER">
+         <children>
+            <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onMouseClicked="#ok" text="OK">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btn_cancel" mnemonicParsing="false" onMouseClicked="#cancel" text="Annuler">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <left>
+      <ImageView fx:id="imagePlaylist" fitHeight="300.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER_LEFT">
+         <image>
+            <Image url="file:ressources/no_image.png" />
+         </image>
+         <BorderPane.margin>
+            <Insets left="10.0" />
+         </BorderPane.margin>
+      </ImageView>
+   </left>
+   <top>
+      <TextField BorderPane.alignment="BOTTOM_LEFT" fx:id="newName" prefHeight="34.0" prefWidth="628.0" promptText="Nom" >
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TextField>
+   </top>
+   <center>
+      <Button mnemonicParsing="false" text="Choisir..." BorderPane.alignment="BOTTOM_LEFT" onMouseClicked="#chooseImage">
+         <BorderPane.margin>
+            <Insets bottom="30.0" left="10.0" />
+         </BorderPane.margin>
+      </Button>
+   </center>
+</BorderPane>

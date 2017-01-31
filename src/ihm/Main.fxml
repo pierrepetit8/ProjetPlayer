@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderContener" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2c3e50;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+           <Menu text="Equalizer">
+              <MenuItem fx:id="equaBtn" onAction="#openEqualizer" text="Ouvrir l'équalizer" /> 
+          </Menu>
+          <Menu text="Aide">
+            <items>
+              <MenuItem text="A propos" />
+            </items>
+          </Menu>
+         
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <ImageView fx:id="imagePlaylist" fitHeight="247.0" fitWidth="202.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="TOP_LEFT">
+         <BorderPane.margin>
+            <Insets left="20.0" top="20.0" />
+         </BorderPane.margin>
+         <image>
+            <Image url="file:ressources/no_image.png" />
+         </image>
+      </ImageView>
+   </left>
+   
+   <center>
+      <VBox prefHeight="371.0" prefWidth="248.0" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="playlist" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #95a5a6;" visible="false">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="50.0" right="5.0" top="10.0" />
+               </VBox.margin>
+            </ListView>
+          
+            <Label text="Volume" textFill="WHITE">
+               <VBox.margin>
+                  <Insets left="80.0" />
+               </VBox.margin>
+            </Label>
+            <Slider fx:id="volumeSlider" blockIncrement="0.01" max="1.0" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="200.0" value="0.6">
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </Slider>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+   </center>
+   
+   <right>
+      <VBox prefHeight="326.0" prefWidth="177.0" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="playlistsList" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #95a5a6;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </ListView>
+            <HBox prefHeight="44.0" prefWidth="177.0">
+               <children>
+                  <Button fx:id="btn_playlist" mnemonicParsing="false" onMouseClicked="#addPlaylist" text="Ajouter">
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btn_edit" mnemonicParsing="false" onMouseClicked="#editPlaylist" text="Editer">
+                     <HBox.margin>
+                        <Insets left="30.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </right>
+   <bottom>
+      <VBox prefHeight="76.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Slider fx:id="slider_music" prefHeight="48.0" prefWidth="600.0"/>
+            <HBox alignment="CENTER" prefHeight="29.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="btn_play_pause" mnemonicParsing="false" onMouseClicked="#play_pause" prefHeight="35.0" prefWidth="45.0" style="-fx-background-color: #000000;" text="Play" textAlignment="CENTER" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_stop" mnemonicParsing="false" onMouseClicked="#stop" prefHeight="35.0" prefWidth="45.0" style="-fx-background-color: #000000;" text="Stop" textAlignment="CENTER" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>

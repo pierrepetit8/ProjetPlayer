@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: #2c3e50;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+   <right>
+      <ListView fx:id="listMusics" prefHeight="300.0" prefWidth="180.0" style="-fx-background-color: #95a5a6;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets right="5.0" />
+         </BorderPane.margin></ListView>
+   </right>
+   <left>
+      <ListView fx:id="listMusicsPlaylist" prefHeight="203.0" prefWidth="180.0" style="-fx-background-color: #95a5a6;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="5.0" />
+         </BorderPane.margin></ListView>
+   </left>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="title" promptText="Titre">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" />
+               </VBox.margin></TextField>
+            <TextField fx:id="artist" promptText="Artiste">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" />
+               </VBox.margin></TextField>
+            <TextField fx:id="album" promptText="Album">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" />
+               </VBox.margin></TextField>
+            <TextField fx:id="music" disable="true">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="2.0" right="2.0" />
+               </VBox.margin></TextField>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#chooseMusic" prefHeight="25.0" prefWidth="99.0" text="Parcourir..." BorderPane.alignment="BOTTOM_LEFT">
+                <BorderPane.margin>
+                    <Insets bottom="30.0" left="10.0" />
+                </BorderPane.margin>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#add" prefWidth="100.0" text="Ajouter">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#delete" prefWidth="100.0" text="Supprimer" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="66.0" prefWidth="503.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#delete_playlist" prefWidth="150.0" text="Supprimer Playlist" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets top="25.0" />
+               </HBox.margin>
+            </Button>
+            <Button alignment="CENTER" layoutX="185.0" layoutY="46.0" mnemonicParsing="false" onMouseClicked="#quit" prefWidth="150.0" text="Terminer l'édition" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets left="190.0" top="25.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+   <top>            
+      <ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: rgba(255, 255, 255, 0);" BorderPane.alignment="CENTER">
+          <TextField fx:id="name" promptText="Nom de la playlist" />
+          <tooltip>
+              <Tooltip text="A renseigner uniquement si l'on veut changer le nom !" />
+          </tooltip>
+         <BorderPane.margin>
+            <Insets left="5.0" right="5.0" top="10.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="12.0" />
+         </padding>
+      </ScrollPane>
+   </top>
+</BorderPane>
